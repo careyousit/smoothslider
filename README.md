@@ -413,56 +413,7 @@ $(window).load(function() {
   });
 });
 ```
-11.Video & the api (wistia)
-```html
-<div class="smoothslider">
-  <ul class="slides">
-    <li>
-      <iframe id="player_1" src="http://fast.wistia.com/embed/iframe/t4yniozocs?controlsVisibleOnLoad=true&playerColor=474745&version=v1&videoHeight=366&videoWidth=650&volumeControl=true&videoFoam=true" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" width="650" height="366"></iframe>
-    </li>
-    <li>
-      <img src="slide2.jpg" />
-    </li>
-    <li>
-      <img src="slide3.jpg" />
-    </li>
-    <li>
-      <img src="slide4.jpg" />
-    </li>
-  </ul>
-</div>
-```
-```js
-// Can also be used with $(document).ready()
-  $(window).load(function(){
-  // Wistia handler.
-  wistiaEmbed = document.getElementById( 'player_1' ).wistiaApi;
- 
-  // Call fitVid before smoothslider initializes, so the proper initial height can be retrieved.
-  $( '.smoothslider' )
-    .fitVids()
-    .smoothslider({
-      animation: 'slide',
-      useCSS: false,
-      animationLoop: false,
-      smoothHeight: true,
-      start: function( slider ) {
-        $('body').removeClass( 'loading' );
-      },
-      before: function ( slider ) {
-        wistiaEmbed.pause();
-      }
-  });
- 
-  wistiaEmbed.bind( 'play', function() {
-    jQuery( '.smoothslider' ).smoothslider( 'pause' );
-  });
- 
-  wistiaEmbed.bind( 'end', function() {
-    jQuery( '.smoothslider' ).smoothslider( 'play' );
-  });
-});
-```
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
