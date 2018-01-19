@@ -43,7 +43,7 @@ How to use:
 ```
 2.Basic Slider
 ```html
-<div class="flexslider">
+<div class="smoothslider">
   <ul class="slides">
     <li>
       <img src="slide1.jpg" />
@@ -63,14 +63,14 @@ How to use:
 ```js
 // Can also be used with $(document).ready()
 $(window).load(function() {
-  $('.flexslider').flexslider({
+  $('.smoothslider').smoothslider({
     animation: "slide"
   });
 });
 ```
 3.Basic Slider customDirectionNav
 ```html
-<div class="flexslider">
+<div class="smoothslider">
   <ul class="slides">
     <li>
       <img src="slide1.jpg" />
@@ -95,7 +95,7 @@ $(window).load(function() {
 ```js
 // Can also be used with $(document).ready()
 $(window).load(function() {
-  $('.flexslider').flexslider({
+  $('.smoothslider').smoothslider({
     animation: "slide",
     controlsContainer: $(".custom-controls-container"),
     customDirectionNav: $(".custom-navigation a")
@@ -104,7 +104,7 @@ $(window).load(function() {
 ```
 4.Basic Slider with Simple Caption
 ```html
-<div class="flexslider">
+<div class="smoothslider">
   <ul class="slides">
     <li>
       <img src="slide1.jpg" />
@@ -141,14 +141,14 @@ $(window).load(function() {
 ```js
 // Can also be used with $(document).ready()
 $(window).load(function() {
-  $('.flexslider').flexslider({
+  $('.smoothslider').smoothslider({
     animation: "slide"
   });
 });
 ```
 5.Slider w/thumbnail controlNav pattern
 ```html
-<div class="flexslider">
+<div class="smoothslider">
   <ul class="slides">
     <li data-thumb="slide1-thumb.jpg">
       <img src="slide1.jpg" />
@@ -168,7 +168,7 @@ $(window).load(function() {
 ```js
 // Can also be used with $(document).ready()
 $(window).load(function() {
-  $('.flexslider').flexslider({
+  $('.smoothslider').smoothslider({
     animation: "slide",
     controlNav: "thumbnails"
   });
@@ -176,7 +176,7 @@ $(window).load(function() {
 ```
 6.Slider w/thumbnail slider
 ```html
-<div id="slider" class="flexslider">
+<div id="slider" class="smoothslider">
   <ul class="slides">
     <li>
       <img src="slide1.jpg" />
@@ -193,7 +193,7 @@ $(window).load(function() {
     <!-- items mirrored twice, total of 12 -->
   </ul>
 </div>
-<div id="carousel" class="flexslider">
+<div id="carousel" class="smoothslider">
   <ul class="slides">
     <li>
       <img src="slide1.jpg" />
@@ -214,7 +214,7 @@ $(window).load(function() {
 ```js
 $(window).load(function() {
   // The slider being synced must be initialized first
-  $('#carousel').flexslider({
+  $('#carousel').smoothslider({
     animation: "slide",
     controlNav: false,
     animationLoop: false,
@@ -224,7 +224,7 @@ $(window).load(function() {
     asNavFor: '#slider'
   });
  
-  $('#slider').flexslider({
+  $('#slider').smoothslider({
     animation: "slide",
     controlNav: false,
     animationLoop: false,
@@ -236,7 +236,7 @@ $(window).load(function() {
 ```
 7.Basic Carousel
 ```html
-<div class="flexslider">
+<div class="smoothslider">
   <ul class="slides">
     <li>
       <img src="slide1.jpg" />
@@ -256,7 +256,7 @@ $(window).load(function() {
 ```
 ```js
 $(window).load(function() {
-  $('.flexslider').flexslider({
+  $('.smoothslider').smoothslider({
     animation: "slide",
     animationLoop: false,
     itemWidth: 210,
@@ -266,7 +266,7 @@ $(window).load(function() {
 ```
 8.Carousel With Min & Max Ranges
 ```html
-<div class="flexslider">
+<div class="smoothslider">
   <ul class="slides">
     <li>
       <img src="slide1.jpg" />
@@ -286,7 +286,7 @@ $(window).load(function() {
 ```
 ```js
 $(window).load(function() {
-  $('.flexslider').flexslider({
+  $('.smoothslider').smoothslider({
     animation: "slide",
     animationLoop: false,
     itemWidth: 210,
@@ -298,7 +298,7 @@ $(window).load(function() {
 ```
 9.Carousel With Min & Max Ranges
 ```html
-<div class="flexslider">
+<div class="smoothslider">
   <ul class="slides">
     <li>
       <img src="slide1.jpg" />
@@ -321,7 +321,7 @@ $(window).load(function() {
  
   // store the slider in a local variable
   var $window = $(window),
-      flexslider = { vars:{} };
+      smoothslider = { vars:{} };
  
   // tiny helper function to add breakpoints
   function getGridSize() {
@@ -334,7 +334,7 @@ $(window).load(function() {
   });
  
   $window.load(function() {
-    $('.flexslider').flexslider({
+    $('.smoothslider').smoothslider({
       animation: "slide",
       animationLoop: false,
       itemWidth: 210,
@@ -348,14 +348,14 @@ $(window).load(function() {
   $window.resize(function() {
     var gridSize = getGridSize();
  
-    flexslider.vars.minItems = gridSize;
-    flexslider.vars.maxItems = gridSize;
+    smoothslider.vars.minItems = gridSize;
+    smoothslider.vars.maxItems = gridSize;
   });
 }());
 ```
 10.Video & the api (vimeo)
 ```html
-<div class="flexslider">
+<div class="smoothslider">
   <ul class="slides">
     <li>
       <iframe id="player_1" src="https://player.vimeo.com/video/39683393?api=1&player_id=player_1" width="500" height="281" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
@@ -391,18 +391,18 @@ $(window).load(function() {
   function ready(player_id) {
     var froogaloop = $f(player_id);
     froogaloop.addEvent('play', function(data) {
-      $('.flexslider').flexslider("pause");
+      $('.smoothslider').smoothslider("pause");
     });
     froogaloop.addEvent('pause', function(data) {
-      $('.flexslider').flexslider("play");
+      $('.smoothslider').smoothslider("play");
     });
   }
  
  
-  // Call fitVid before FlexSlider initializes, so the proper initial height can be retrieved.
-  $(".flexslider")
+  // Call fitVid before smoothslider initializes, so the proper initial height can be retrieved.
+  $(".smoothslider")
     .fitVids()
-    .flexslider({
+    .smoothslider({
       animation: "slide",
       useCSS: false,
       animationLoop: false,
@@ -415,7 +415,7 @@ $(window).load(function() {
 ```
 11.Video & the api (wistia)
 ```html
-<div class="flexslider">
+<div class="smoothslider">
   <ul class="slides">
     <li>
       <iframe id="player_1" src="http://fast.wistia.com/embed/iframe/t4yniozocs?controlsVisibleOnLoad=true&playerColor=474745&version=v1&videoHeight=366&videoWidth=650&volumeControl=true&videoFoam=true" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" width="650" height="366"></iframe>
@@ -438,10 +438,10 @@ $(window).load(function() {
   // Wistia handler.
   wistiaEmbed = document.getElementById( 'player_1' ).wistiaApi;
  
-  // Call fitVid before FlexSlider initializes, so the proper initial height can be retrieved.
-  $( '.flexslider' )
+  // Call fitVid before smoothslider initializes, so the proper initial height can be retrieved.
+  $( '.smoothslider' )
     .fitVids()
-    .flexslider({
+    .smoothslider({
       animation: 'slide',
       useCSS: false,
       animationLoop: false,
@@ -455,11 +455,11 @@ $(window).load(function() {
   });
  
   wistiaEmbed.bind( 'play', function() {
-    jQuery( '.flexslider' ).flexslider( 'pause' );
+    jQuery( '.smoothslider' ).smoothslider( 'pause' );
   });
  
   wistiaEmbed.bind( 'end', function() {
-    jQuery( '.flexslider' ).flexslider( 'play' );
+    jQuery( '.smoothslider' ).smoothslider( 'play' );
   });
 });
 ```
@@ -479,4 +479,4 @@ The gem is available as open source under the terms of the [MIT License](https:/
 
 ## Code of Conduct
 
-Everyone interacting in the Flexslider project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/arjunghimire/smoothslider/blob/master/CODE_OF_CONDUCT.md).
+Everyone interacting in the smoothslider project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/arjunghimire/smoothslider/blob/master/CODE_OF_CONDUCT.md).
