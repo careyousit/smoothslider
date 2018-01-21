@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    smoothslider (1.1.2)
+    smoothslider (1.1.3)
 
 GEM
   remote: https://rubygems.org/
